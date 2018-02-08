@@ -1,0 +1,186 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: ( 1fr )[3];
+      grid-template-columns: repeat( 3, 1fr );
+  -ms-grid-rows: 2fr;
+      grid-template-rows: 2fr;
+  grid-gap: 0;
+  background-color: rgb(250, 243, 224);
+}
+
+.wrapper {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+  margin: 0 auto;
+}
+
+.timerDiv {
+  width: 120px;
+  height: 50px;
+  margin: 0 auto 30px;
+  color: #CF1B00;
+  border: 3px solid #E76116;
+  border-radius: 25px;
+  line-height: 50px;
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h2 span {
+  display: block;
+}
+
+input {
+  margin: 0 auto 40px;
+  width: 300px;
+  height: 30px;
+  font-size: 25px;
+  line-height: 30px;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 3px;
+  background-color: rgb(251, 187, 126);
+  display: block;
+}
+
+button {
+  display: block;
+  font-size: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 200px;
+  height: 50px;
+  background-color: #CF1B00;
+  border: 3px solid #E76116;
+  border-radius: 5px;
+  margin: 0 auto 30px;
+  color: white;
+}
+
+#mapUser, #mapPC {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+#mainDiv {
+  display: table;
+  width: 100%;
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  z-index: 1000;
+}
+
+#usedCities {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 20px;
+  overflow: scroll;
+  z-index: 999;
+}
+
+#usedCities > div {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#usedCities > .right {
+  color: orange;
+  text-align: right;
+}
+
+#usedCities > .left {
+  color: green;
+  text-align: left;
+}
+
+#usedCities > .title {
+  display: inline-block;
+  width: 50%;
+  line-height: 50px;
+  height: 50px;
+}
+
+@media (max-width: 800px) {
+  body {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: ( 1fr )[3];
+        grid-template-rows: repeat( 3, 1fr );
+  }
+
+  .timerDiv {
+    width: 60px;
+    height: 20px;
+    margin: 0 auto 10px;
+    border: 2px solid #E76116;
+    border-radius: 10px;
+    line-height: 20px;
+    font-size: 20px;
+  }
+
+  h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  input {
+    margin: 0 auto 20px;
+    width: 300px;
+    height: 20px;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  button {
+    font-size: 20px;
+    width: 200px;
+    height: 30px;
+    border: 2px solid #E76116;
+    margin: 0 auto 15px;
+  }
+
+  #mainDiv {
+    padding: 10px;
+  }
+
+  #usedCities {
+    position: relative;
+  }
+}
