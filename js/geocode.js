@@ -4,16 +4,19 @@ function geoCreate( city, id ) {
 
   //Создаем карту, находя координаты центра по названию города
   ymaps.geocode( city, { results: 1 } ).then(function ( res ) {
-    var firstGeoObject = res.geoObjects.get( 0 ),
+    try {
+      var firstGeoObject = res.geoObjects.get( 0 ),
 
-        myMap = new ymaps.Map(id, {
-          center: firstGeoObject.geometry.getCoordinates(),
-          zoom: 12,
-          behaviors: ['drag', 'scrollZoom'],
-        });
+          myMap = new ymaps.Map(id, {
+            center: firstGeoObject.geometry.getCoordinates(),
+            zoom: 12,
+            behaviors: ['drag', 'scrollZoom'],
+          });
 
-    myMap.container.fitToViewport();
-
+      myMap.container.fitToViewport();
+    } catch (err) {
+      document.getElementById( id ).innerHTML = "<span>Невозможно отобразить город</span>";
+    }
   }, function ( err ) {
     alert( err.message );
   });
